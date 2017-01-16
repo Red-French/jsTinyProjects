@@ -1,6 +1,12 @@
 (function () {
 'use strict';
 
+  // PLAY CROWD NOISE
+  var audio = new Audio('./sounds/crowd.wav');
+  audio.loop = true;
+  audio.play();
+
+
   // PLAY AUDIO AND ADD STYLE
   function play(e) {
     // check for match of pressed key vs 'data-key' property of div and audio
