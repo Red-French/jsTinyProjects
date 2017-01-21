@@ -1,35 +1,37 @@
 (function() {
 'use strict';
 
-  let secondHand = document.querySelector('.second-hand');
-  let minuteHand = document.querySelector('.min-hand');
-  let hourHand = document.querySelector('.hour-hand');
+  let now = null;
+  let seconds = null;
+  let thisMinute = null;
+  let thisHour = null;
+  let secondsDegrees = null;
+  let thisMinuteDegrees = null;
+  let thisHourDegrees = null;
+
+  let secondHand = document.querySelector('.secondHand');
+  let minuteHand = document.querySelector('.minuteHand');
+  let hourHand = document.querySelector('.hourHand');
 
   function setDate() {
-    const now = new Date();
-    const seconds = now.getSeconds();
-    const secondsDegrees = ((seconds / 60) * 360) + 90;  // calculate degree position of second hand
-                                                         // seconds/60 = percentage; then multiply by 360 degrees for hand position
-                                                         // default position of hands is is 270 degrees, and second hand is set to 90 degrees beyond this (12 o'clock position), therefore, 90 degrees is added to calculation
+    now = new Date();
+    seconds = now.getSeconds();
+    thisMinute = now.getMinutes();
+    thisHour = now.getHours();
+
+    secondsDegrees = ((seconds / 60) * 360) + 90;  // Calculate degree position of second hand (default is 270 degrees).
+                                                         // seconds/60 = percentage; then multiply by 360 degrees for hand position.
+                                                         // The second hand, to be at the 12 o'clock position, should be 90 degrees beyond the 270-degree default, so 90 is added.
     secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
-    console.log(seconds);
 
-    const thisMinute = now.getMinutes();
-    const thisMinuteDegrees = ((thisMinute / 60) * 360) + 90;
-
+    thisMinuteDegrees = ((thisMinute / 60) * 360) + 90;
     minuteHand.style.transform = `rotate(${thisMinuteDegrees}deg)`;
-    console.log(thisMinute);
 
-    const thisHour = now.getHours();
-    const thisHourDegrees = ((thisHour / 12) * 360) + 90;
 
+    thisHourDegrees = ((thisHour / 12) * 360) + 90;
     hourHand.style.transform = `rotate(${thisHourDegrees}deg)`;
-    console.log(thisHour);
-
-
 
   }
-
   setInterval(setDate, 1000);
 
 })();
