@@ -63,13 +63,8 @@ body {
 }
 
 .hourHand {
-  background: #000;
-  height: 1.25%;
-  left: 49.75%;
-  position: absolute;
-  top: 48.25%;
-  transform-origin: 50% 100%;
-  width: 35%;
+  width:30%;
+  left: 20.5%;
 }
 
 .noonHand {
