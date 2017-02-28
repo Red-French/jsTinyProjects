@@ -9,7 +9,7 @@
   let thisMinuteDegrees = null;
   let thisHourDegrees = null;
 
-  let secondHand = document.querySelector('.secondHand');
+  let secondHand = document.querySelector('.secondHand');  // querySelector returns a nodelist
   let minuteHand = document.querySelector('.minuteHand');
   let hourHand = document.querySelector('.hourHand');
 
