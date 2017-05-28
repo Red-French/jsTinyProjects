@@ -7,10 +7,11 @@ Canvas has several methods for drawing paths, boxes, circles, text, and adding i
 A canvas is a rectangular area on an HTML page. By default, a canvas has no border and no content.
 
 The markup looks like this:
+```
   <canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;">
     Your browser does not support canvas.
   </canvas>
-
+```
 
 ## Draw a Line
 ```
